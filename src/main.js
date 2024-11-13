@@ -49,3 +49,4 @@ searchForm.addEventListener('submit', async (event) => {
     
     searchForm.reset(); 
 });
+

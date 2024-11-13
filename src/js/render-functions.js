@@ -17,11 +17,23 @@ export function renderGallery(images) {
     `).join('');
 }
 
+// export function showError(message) {
+//     iziToast.error({
+//         title: 'Error',
+//         message: message,
+//         position: 'topRight',
+//         color: 'red',
+//     });
+// }
 export function showError(message) {
-    iziToast.error({
-        title: 'Error',
-        message: message,
-        position: 'topRight',
-        color: 'red',
-    });
+    if (typeof iziToast !== 'undefined') {
+        iziToast.error({
+            title: 'Error',
+            message: message,
+            position: 'topRight',
+            color: 'red',
+        });
+    } else {
+        console.error('iziToast is not defined');
+    }
 }
